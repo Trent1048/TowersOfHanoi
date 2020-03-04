@@ -1,5 +1,5 @@
 #include "stdio.h"
-const int SIZE = 4;
+const int SIZE = 3;
 
 void printGame(int game[3][SIZE])
 {
@@ -7,6 +7,7 @@ void printGame(int game[3][SIZE])
 	{
 		printf("[%d] [%d] [%d]\n", game[0][SIZE-1-i], game[1][SIZE-1-i], game[2][SIZE-1-i]);
 	}
+	printf("\n");
 }
 
 // returns the index of the peg that is the spare
@@ -48,12 +49,12 @@ void move(int (*board)[3][SIZE], int bDisk, int tDisk, int src, int trg)
     }
     else
     {
-        move(board, bDisk-1, tDisk, src, spa);
+		int saveSpace = getSpace(board, spa);
+        move(board, bDisk+1, tDisk, src, spa);
         move(board, bDisk, bDisk, src, trg);
-        //What if we move dudes onto a big dude, then indexes will be wrong. Uh oh!
-        move(board, bDisk, tDisk-1, spa, trg);
-    }
-    
+        move(board, saveSpace, getSpace(board, spa)-1, spa, trg);
+	}
+	printGame(*board);
 }
 
 int main(void) 
@@ -67,8 +68,8 @@ int main(void)
 			else game[i][j] = 0;
 		}
 	}
-	move(&game, SIZE-1, SIZE-1, 0, 2);
 	printGame(game);
+	move(&game, 0, SIZE-1, 0, 2);
 }
 
 
