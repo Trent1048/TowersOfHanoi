@@ -9,21 +9,19 @@ void printGame(int game[3][SIZE])
 	}
 }
 
+// returns the index of the peg that is the spare
+// (the one that isn't the source or target)
 int getSpare(int src, int trg)
 {
-	if((src==0&&trg==1)||(trg==0&&src==1))
-	{
-		return 2;
+	if(src != trg) {
+		for(int i = 0; i < 3; i++){
+			if(src != i && trg != i) {
+				return i;
+			}
+		}
 	}
-	else if((src==1&&trg==2)||(trg==1&&src==2))
-	{
-		return 0;
-	}
-	else if((src==0&&trg==2)||(trg==0&&src==2))
-	{
-		return 1;
-	}
-	else return -1;
+	
+	return -1;
 }
 
 // returns the lowest space available on a peg
@@ -57,7 +55,6 @@ void move(int (*board)[3][SIZE], int bDisk, int tDisk, int src, int trg)
     }
     
 }
-
 
 int main(void) 
 {
