@@ -3,8 +3,8 @@
  Date: 3/14/20
  Class: CS145A
  Assignment: Lab #5 (Towers of Hanoi)
- This program solves the classic "Towers of Hanoi" problem using recursion.
- BONUS: Solution is displayed with ASCII graphics in the console.
+ This program solves the classic "Towers of Hanoi" problem using recursion
+ BONUS: Solution is displayed with ASCII graphics in the console
  Enjoy!!!
 */
 
@@ -138,5 +138,6 @@ int main(void)
 	
 	// Start solving process by running move on starting disks
 	move(&game, 0, SIZE-1, 0, 2);
-	printf("Solved in %d moves. \n(P.S. The first picture shows the initial board)\n", moves);
+	printf("Solved in %d moves. \n(P.S. The first picture shows the initial board)\nPress ENTER to end.\n", moves);
+	scanf("ENTER");
 }
