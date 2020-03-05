@@ -3,8 +3,8 @@
  Date: 3/14/20
  Class: CS145A
  Assignment: Lab #5 (Towers of Hanoi)
- This program solves the classic "Towers of Hanoi" problem using recursion
- BONUS: Solution is displayed with ASCII graphics in the console
+ This program solves the classic "Towers of Hanoi" problem using recursion.
+ BONUS: Solution is displayed with ASCII graphics in the console.
  Enjoy!!!
 */
 
