@@ -2,8 +2,8 @@
  Names: John-Paul Powers, Trent Bultsma
  Date: 3/14/20
  Class: CS145A
- Assignment: Lab #5 (Towers of Hanoi)
- This program solves the classic "Towers of Hanoi" problem using recursion
+ Assignment: Lab #5 (Tower of Hanoi)
+ This program solves the classic "Tower of Hanoi" problem using recursion
  BONUS: Solution is displayed with ASCII graphics in the console
  Enjoy!!!
 */
@@ -133,7 +133,7 @@ int main(void)
 	int moves = 1;
 	for(int i = 0; i < SIZE; i++) moves *= 2;
 	moves--;
-	printf("Solution for Towers of Hanoi with %d disks:\n", SIZE);
+	printf("Solution for Tower of Hanoi with %d disks:\n", SIZE);
 	printGame(game);
 	
 	// Start solving process by running move on starting disks
